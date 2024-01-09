@@ -7,7 +7,7 @@ export const FavoriteCurrencyList = () => {
   const { favorites } = useFavorites();
   const { assets } = useAssets({ ids: favorites });
 
-  if (!assets && favorites.length === 0) return null;
+  if (favorites.length === 0) return null;
 
   return (
     <section className={styles.list}>
