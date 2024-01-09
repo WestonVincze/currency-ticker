@@ -1,18 +1,15 @@
 .header {
   display: flex;
   column-gap: var(--spacing-md);
-  align-items: center;
+  justify-content: center;
   padding: 1rem;
   margin-bottom: var(--spacing-md);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   background-color: var(--primary);
 }
 
-.header > * {
-  width: 33%;
-}
 
 .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
 }

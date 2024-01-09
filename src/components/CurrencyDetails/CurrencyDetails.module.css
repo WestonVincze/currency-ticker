@@ -1,6 +1,7 @@
 .details {
   max-width: 600px;
   margin: 0 auto;
+  padding: var(--spacing-md);
 }
 
 .details header {
