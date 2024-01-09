@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AssetDetails, baseURL } from "./types";
+import { AssetDetails, REFRESH_RATE, baseURL } from "./types";
 
 const fetchAssetDetails = async (id: string): Promise<AssetDetails> => {
   const response = await fetch(new Request(`${baseURL}/assets/${id}`));
@@ -41,7 +41,13 @@ export const useAssetDetails = (id: string) => {
     };
 
     fetchData();
+
+    const fetchInterval = setInterval(() => fetchData(), REFRESH_RATE)
+
+    return () => {
+      clearInterval(fetchInterval);
+    }
   }, [id])
 
   return { asset, error }
-}
+};
