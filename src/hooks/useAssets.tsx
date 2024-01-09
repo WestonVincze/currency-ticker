@@ -1,19 +1,14 @@
 import { useEffect, useState } from "react";
+import { Asset, baseURL } from "./types";
 
-interface Asset {
-  id: string,
-  rank: string,
-  symbol: string,
-  name: string,
-  priceUsd: string,
-}
-
-const fetchAssets = async (request: Request): Promise<Asset[]> => {
-  const response = await fetch(request);
+const fetchAssets = async (): Promise<Asset[]> => {
+  const response = await fetch(new Request(`${baseURL}/assets`));
   if (!response.ok) throw new Error("fetchAssets request failed")
 
   const jsonData = await response.json();
   if (!Array.isArray(jsonData.data)) throw new Error("unexpected response format");
+
+  console.log(jsonData.data);
 
   const assets: Asset[] = jsonData.data.map((item: any) => ({
     id: item.id,
@@ -34,7 +29,7 @@ export const useAssets = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const assets = await fetchAssets(new Request('https://api.coincap.io/v2/assets'));
+        const assets = await fetchAssets();
         setAssets(assets);
       } catch (err) {
         setError(err as Error);
@@ -44,5 +39,5 @@ export const useAssets = () => {
     fetchData();
   }, []);
 
-  return {assets, error};
+  return { assets, error };
 }
