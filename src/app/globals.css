@@ -9,7 +9,15 @@
   --font-color: #D9D9D9;
   --primary: #342B3A;
   --primary-shaded: #2F2734;
+  --primary-hover: #27212C;
   --background: #1E1B20;
+
+  /** shadows **/
+  --drop-shadow: drop-shadow(0 4px rgba(0, 0, 0, 0.25));
+  --inner-shadow: 0px 0px 5px 0px #1E1B20 inset;
+
+  /** animations **/
+  --fade-in: fadeIn 300ms linear;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,4 +59,13 @@ button {
 
 button:hover {
   background-color: transparent;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

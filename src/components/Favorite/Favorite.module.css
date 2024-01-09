@@ -5,7 +5,7 @@
   transform-origin: center;
 }
 
-.favorite:hover svg {
+.favorite:hover svg, .favorite:focus svg, .favorite:focus-visible svg {
   cursor: pointer;
   transform: scale(1.2);
 }

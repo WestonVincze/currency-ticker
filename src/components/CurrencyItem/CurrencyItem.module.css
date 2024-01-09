@@ -1,7 +1,15 @@
 .item {
   padding: 0.5rem;
   border-radius: var(--border-radius);
-  background-color: var(--primary);
+  background: var(--primary);
+  animation: var(--fade-in);
+  transition: background-color 250ms ease-in-out;
+  filter: var(--drop-shadow);
+  box-shadow: 0px 0px 5px 0px var(--background) inset;
+}
+
+.item:hover, .item:focus, .item:focus-visible {
+  background: var(--primary-hover);
 }
 
 .item article {
@@ -19,6 +27,7 @@
   text-align: center;
   background-color: var(--primary-shaded);
   border-radius: var(--border-radius);
+  box-shadow: 0px 0px 5px 0px var(--primary-hover) inset;
 }
 
 .item section {
@@ -36,4 +45,5 @@
   height: 10rem;
   border-radius: var(--border-radius);
   background: radial-gradient(var(--primary) 0, #0000 95%);
+  animation: var(--fade-in);
 }

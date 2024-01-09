@@ -1,5 +1,5 @@
-import { useAssetDetails } from "@/hooks/useAssetDetails";
 import styles from "./CurrencyDetails.module.css";
+import { useAssetDetails } from "@/hooks/useAssetDetails";
 import { Button } from "../Button";
 import { Line } from "./Line";
 import { Favorite } from "../Favorite";
