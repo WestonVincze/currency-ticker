@@ -18,7 +18,7 @@ export const CurrencyDetails = ({ id }: CurrencyDetailsProps) => {
   return (
     <article className={styles.details}>
       <header>
-        <h2>{asset.rank}</h2>
+        <h2>#{asset.rank}</h2>
         <h2>{`${asset.name} (${asset.symbol})`}</h2>
         <h2>{"<3"}</h2>
       </header>
@@ -46,5 +46,5 @@ export const CurrencyDetails = ({ id }: CurrencyDetailsProps) => {
         <Button label="back" href="/" type="link" />
       </footer>
     </article>
-  );
-}
+  )
+};

@@ -25,10 +25,10 @@ export const Line = ({ label, value, format = "currency" }: LineProps) => {
       break;
   }
 
-  return(
+  return (
     <div className={styles.line}>
       <label>{label}</label>
       <span>{formattedValue}</span>
     </div>
   )
-}
+};
