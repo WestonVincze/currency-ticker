@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inconsolata } from 'next/font/google'
 import './globals.css'
+import { Header } from '@/components/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const inconsolata = Inconsolata({
+  subsets: ['latin'],
+  weight: ["400", "600"],
+  variable: "--main-font"
+})
 
 export const metadata: Metadata = {
   title: 'Currency Ticker App',
@@ -16,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <body className={inconsolata.variable}>
       <body className={inter.className}>{children}</body>
+        <main>{children}</main>
+      </body>
     </html>
   )
 }

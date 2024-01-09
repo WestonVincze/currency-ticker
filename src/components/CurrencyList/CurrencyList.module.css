@@ -1,0 +1,12 @@
+.list {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.list > * {
+  width: calc(25% - var(--spacing-md));
+}
