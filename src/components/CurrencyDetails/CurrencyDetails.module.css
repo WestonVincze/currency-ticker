@@ -1,0 +1,21 @@
+.details {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.details header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  background-color: var(--primary);
+}
+
+.details section {
+  padding: var(--spacing-md);
+  padding-bottom: 0;
+}
+
+.details footer {
+  padding: 1rem;
+}

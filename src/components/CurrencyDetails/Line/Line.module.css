@@ -1,0 +1,7 @@
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 var(--spacing-md);
+  font-size: 1.3rem;
+}
