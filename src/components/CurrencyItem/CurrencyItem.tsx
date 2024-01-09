@@ -24,7 +24,12 @@ export const CurrencyItem = memo(function CurrencyItem({
   price,
 }: CurrencyItemProps) {
   return (
-    <Link className={styles.item} href={`/details/${id}`}>
+    <Link
+      className={styles.item}
+      href={`/details/${id}`}
+      aria-label={`link to ${id}`}
+      data-testid="currency-item"
+    > 
       <article>
         <header>
           <h2>{name}</h2>
