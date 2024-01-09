@@ -9,7 +9,9 @@ interface FavoriteProps {
 export const Favorite = ({ id }: FavoriteProps) => {
   const { isInFavorites, addToFavorites, removeFromFavorites } = useFavorites();
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (isInFavorites(id)) {
       removeFromFavorites(id);
     } else {

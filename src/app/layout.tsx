@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Inconsolata } from 'next/font/google'
-import './globals.css'
 import { Header } from '@/components/Header'
+import { FavoritesProvider } from '@/hooks/useFavorites'
+import './globals.css'
 
 const inconsolata = Inconsolata({
   subsets: ['latin'],
@@ -23,7 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inconsolata.variable}>
         <Header />
-        <main>{children}</main>
+        <FavoritesProvider>
+          <main>
+            {children}
+          </main>
+        </FavoritesProvider>
       </body>
     </html>
   )

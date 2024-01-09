@@ -25,7 +25,19 @@ const fetchAssetDetails = async (id: string): Promise<AssetDetails> => {
 }
 
 export const useAssetDetails = (id: string) => {
-  const [asset, setAsset] = useState<AssetDetails | null>(null);
+  const [asset, setAsset] = useState<AssetDetails>({
+    id: "",
+    rank: "0",
+    symbol: "XXX",
+    name: "xxxxxxx",
+    priceUsd: "0",
+    supply: "0",
+    maxSupply: "0",
+    marketCapUsd: "0",
+    volumeUsd24Hr: "0",
+    changePercent24Hr: "0",
+    vwap24Hr: "0"
+  });
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
@@ -35,6 +47,7 @@ export const useAssetDetails = (id: string) => {
         setAsset(asset);
       } catch (err) {
         setError(err as Error);
+        console.error(err);
       }
     };
 

@@ -12,9 +12,7 @@ interface CurrencyDetailsProps {
  * Detailed view for Currency based on `id` 
  */
 export const CurrencyDetails = ({ id }: CurrencyDetailsProps) => {
-  const { asset, error } = useAssetDetails(id);
-
-  if (asset === null) return <div />
+  const { asset } = useAssetDetails(id);
 
   return (
     <article className={styles.details}>

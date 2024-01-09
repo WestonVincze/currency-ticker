@@ -43,6 +43,7 @@ export const useAssets = ({ limit, ids }: AssetsProps) => {
         setAssets(assets);
       } catch (err) {
         setError(err as Error);
+        console.error(err);
       }
     };
 
