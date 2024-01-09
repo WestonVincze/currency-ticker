@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inconsolata.variable}>
-      <body className={inter.className}>{children}</body>
+        <Header />
         <main>{children}</main>
       </body>
     </html>

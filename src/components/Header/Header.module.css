@@ -1,0 +1,15 @@
+.header {
+  padding: 2rem;
+  background-color: var(--primary);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+}
+
+.header > * {
+  width: 33%;
+}
+
+.title {
+  text-align: center;
+}
