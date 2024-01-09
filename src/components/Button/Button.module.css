@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  min-width: 100px;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--primary);
+  transition: background-color 200ms ease-in-out;
+}
+
+.button:hover, .button:focus, .button:focus-visible {
+  cursor: pointer;
+  background-color: var(--primary-shaded);
+}
