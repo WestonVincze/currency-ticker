@@ -2,6 +2,7 @@ import { useAssetDetails } from "@/hooks/useAssetDetails";
 import styles from "./CurrencyDetails.module.css";
 import { Button } from "../Button";
 import { Line } from "./Line";
+import { Favorite } from "../Favorite";
 
 interface CurrencyDetailsProps {
   id: string;
@@ -20,7 +21,7 @@ export const CurrencyDetails = ({ id }: CurrencyDetailsProps) => {
       <header>
         <h2>#{asset.rank}</h2>
         <h2>{`${asset.name} (${asset.symbol})`}</h2>
-        <h2>{"<3"}</h2>
+        <h2><Favorite id={id} /></h2>
       </header>
 
       <section>

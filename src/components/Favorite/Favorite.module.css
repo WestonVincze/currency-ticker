@@ -1,0 +1,11 @@
+.favorite svg {
+  width: 1.5rem;
+  height: 100%;
+  transition: transform 150ms ease-in-out;
+  transform-origin: center;
+}
+
+.favorite:hover svg {
+  cursor: pointer;
+  transform: scale(1.2);
+}

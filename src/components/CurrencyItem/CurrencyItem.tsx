@@ -1,8 +1,8 @@
+import styles from "./CurrencyItem.module.css";
 import Link from "next/link";
-import style from "./CurrencyItem.module.css";
 import { formatCurrency } from "@/utils/numberFormats";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { memo } from "react";
+import { Favorite } from "../Favorite";
 
 interface CurrencyItemProps {
   id: string,
@@ -10,7 +10,6 @@ interface CurrencyItemProps {
   rank: string,
   symbol: string,
   price: string,
-  isFavorite: boolean,
 }
 
 /**
@@ -23,10 +22,9 @@ export const CurrencyItem = memo(function CurrencyItem({
   rank,
   symbol,
   price,
-  isFavorite
 }: CurrencyItemProps) {
   return (
-    <Link className={style.item} href={`/details/${id}`}>
+    <Link className={styles.item} href={`/details/${id}`}>
       <article>
         <header>
           <h2>{name}</h2>
@@ -39,7 +37,7 @@ export const CurrencyItem = memo(function CurrencyItem({
 
         <footer>
           <span>#{rank}</span>
-          <button>{isFavorite ? <FaHeart /> : <FaRegHeart />}</button>
+          <Favorite id={id} />
         </footer>
       </article>
     </Link>

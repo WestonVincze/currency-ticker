@@ -7,8 +7,6 @@ const fetchAssetDetails = async (id: string): Promise<AssetDetails> => {
 
   const jsonData = await response.json();
 
-  console.log(jsonData.data);
-
   const item = jsonData.data;
 
   return {

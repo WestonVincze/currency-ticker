@@ -7,6 +7,7 @@
 .item article {
   height: 100%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -31,14 +32,8 @@
   font-size: 1.5rem;
 }
 
-.item footer button svg {
-  width: 1.5rem;
-  height: 100%;
-  transition: transform 150ms ease-in-out;
-  transform-origin: center;
-}
-
-.item footer button:hover svg {
-  cursor: pointer;
-  transform: scale(1.2);
+.skeleton {
+  height: 10rem;
+  border-radius: var(--border-radius);
+  background: radial-gradient(var(--primary) 0, #0000 95%);
 }

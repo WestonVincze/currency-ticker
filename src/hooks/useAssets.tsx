@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 import { Asset, baseURL, REFRESH_RATE } from "./types";
 
-const fetchAssets = async (limit?: number, ids?: string[]): Promise<Asset[]> => {
+interface AssetsProps {
+  limit?: number,
+  ids?: string[],
+}
+
+const fetchAssets = async ({ limit, ids }: AssetsProps): Promise<Asset[]> => {
   const params: string[] = [];
 
   if (limit) params.push(`limit=${limit}`);
   if (ids) params.push(`ids=${ids.join(",")}`);
 
   const urlParams = `?${params.join("&")}`;
-  console.log(urlParams);
 
   const response = await fetch(new Request(`${baseURL}/assets${urlParams}`)) ;
   if (!response.ok) throw new Error("fetchAssets request failed")
 
   const jsonData = await response.json();
   if (!Array.isArray(jsonData.data)) throw new Error("unexpected response format");
-
-  console.log(jsonData.data);
 
   const assets: Asset[] = jsonData.data.map((item: any) => ({
     id: item.id,
@@ -29,15 +31,15 @@ const fetchAssets = async (limit?: number, ids?: string[]): Promise<Asset[]> => 
   return assets;
 }
 
-// should be able to filter as well
-export const useAssets = (limit?: number, ids?: string[]) => {
+export const useAssets = ({ limit, ids }: AssetsProps) => {
   const [assets, setAssets] = useState<Asset[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    if (ids?.length === 0) return;
     const fetchData = async () => {
       try {
-        const assets = await fetchAssets(limit, ids);
+        const assets = await fetchAssets({ limit, ids });
         setAssets(assets);
       } catch (err) {
         setError(err as Error);

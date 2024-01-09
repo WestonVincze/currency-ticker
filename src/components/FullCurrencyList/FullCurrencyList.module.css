@@ -1,0 +1,16 @@
+.list {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: var(--spacing-md);
+}
+
+.list > footer {
+  display: flex;
+  justify-content: space-around;
+  column-gap: var(--spacing-md);
+}
