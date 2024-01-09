@@ -1,3 +1,7 @@
-export const CurrencyDetails = () => {
-  return <></>
+interface CurrencyDetailsProps {
+  id: string;
+}
+
+export const CurrencyDetails = ({ id }: CurrencyDetailsProps) => {
+  return <>{id}</>
 }
